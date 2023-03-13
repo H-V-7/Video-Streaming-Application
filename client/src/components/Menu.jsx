@@ -22,7 +22,7 @@ const Container = styled.div`
   height:100vh;
   position:sticky;
   top:0;
-  background-color:${({theme}) => theme.bgLighter};
+  background-color:${({theme}) => theme.bg};
   color: ${({theme}) => theme.text};
   display:flex;
   flex-direction:column;

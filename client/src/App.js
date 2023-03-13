@@ -14,7 +14,7 @@ const Container = styled.div`
 
 const Main = styled.div`
   color:${({theme}) => theme.text};
-  background-color:${({theme}) => theme.bg};
+  background-color:${({theme}) => theme.bgLighter};
 `;
 
 const Wrapper = styled.div``;
