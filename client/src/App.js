@@ -1,35 +1,41 @@
-import styled from "styled-components";
+import styled, { ThemeProvider } from "styled-components";
 import './App.css';
 import Menu from "./components/Menu";
 import Navbar from "./components/Navbar";
+import { lightTheme,darkTheme } from "./utils/Theme";
+import { useState } from "react";
 
 
 const Container = styled.div`
   display:grid;
   grid-template-columns: 20% 80%;
   grid-template-areas: menu main;
-  gap:1rem;
-  
-  
 `
 
 const Main = styled.div`
-
+  color:${({theme}) => theme.text};
+  background-color:${({theme}) => theme.bg};
 `;
 
 const Wrapper = styled.div``;
 
+
+
+
 function App() {
+  const [darkMode, setDarkMode] = useState(true)
   return (
-    <Container>
-      <Menu className="menu"/>
-      <Main className="main">
-        <Navbar />
-        <Wrapper>
-          video cards
-        </Wrapper>
-      </Main>
-    </Container>
+    <ThemeProvider theme={darkMode ? darkTheme : lightTheme}>
+      <Container>
+        <Menu className="menu" darkMode={darkMode} setDarkMode={setDarkMode}/>
+        <Main className="main">
+          <Navbar />
+          <Wrapper>
+            video cards
+          </Wrapper>
+        </Main>
+      </Container>
+    </ThemeProvider>
   );
 }
 
