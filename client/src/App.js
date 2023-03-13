@@ -4,6 +4,9 @@ import Menu from "./components/Menu";
 import Navbar from "./components/Navbar";
 import { lightTheme,darkTheme } from "./utils/Theme";
 import { useState } from "react";
+import {BrowserRouter,Routes,Route} from "react-router-dom";
+import Home from "./Pages/Home";
+import Video from "./Pages/Video";
 
 
 const Container = styled.div`
@@ -27,13 +30,18 @@ function App() {
   return (
     <ThemeProvider theme={darkMode ? darkTheme : lightTheme}>
       <Container>
-        <Menu className="menu" darkMode={darkMode} setDarkMode={setDarkMode}/>
-        <Main className="main">
-          <Navbar />
-          <Wrapper>
-            video cards
-          </Wrapper>
-        </Main>
+        <BrowserRouter>
+          <Menu className="menu" darkMode={darkMode} setDarkMode={setDarkMode}/>
+          <Main className="main">
+            <Navbar />
+            <Wrapper>
+              <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/video/:id" element={<Video />} />
+              </Routes>
+            </Wrapper>
+          </Main>
+        </BrowserRouter>
       </Container>
     </ThemeProvider>
   );

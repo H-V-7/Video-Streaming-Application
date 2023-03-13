@@ -16,6 +16,8 @@ import LightModeIcon from '@mui/icons-material/LightMode';
 import DarkModeOutlinedIcon from '@mui/icons-material/DarkModeOutlined';
 import BugReportIcon from '@mui/icons-material/BugReport';
 import HelpIcon from '@mui/icons-material/Help';
+import OndemandVideoOutlinedIcon from '@mui/icons-material/OndemandVideoOutlined';
+import { Link } from "react-router-dom";
 
 const Container = styled.div`
   box-sizing:border-box;
@@ -35,7 +37,7 @@ const Container = styled.div`
 const LogoContainer = styled.div`
   display:flex;
   align-items:center;
-  padding:0px;
+  gap:10px;
  
 `
 const MenuItem = styled.div`
@@ -80,13 +82,18 @@ const Title = styled.h2`
 const Menu = ({darkMode,setDarkMode}) => {
   return (
     <Container>
+       <Link to="/" style={{textDecoration:"none", color:"inherit"}}>
       <LogoContainer>
+          <OndemandVideoOutlinedIcon />
           <h1 style={{fontSize:20, fontWeight:"bold"}}>Video Gram</h1>
       </LogoContainer>
+      </Link>
+      <Link to="/" style={{textDecoration:"none", color:"inherit"}}>
       <MenuItem>
         <HomeIcon />
-        Menu
+        Home
       </MenuItem>
+      </Link>
       <MenuItem>
         <ExploreIcon />
         Explore

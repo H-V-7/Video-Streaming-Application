@@ -22,10 +22,12 @@ const Search = styled.div`
   width:50%;
   border:1px solid #ccc;
   margin-left:100px;
+  
 `
 const Input = styled.input`
   width:100%;
   padding:10px;
+  color: ${({theme}) => theme.text};
   background-color:transparent;
   border:none;
 `
