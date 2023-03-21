@@ -2,6 +2,7 @@ import styled from "styled-components"
 import Card from "../components/Card"
 
 const Container = styled.div`
+  
   display:flex;
   gap:10px;
   margin-top:50px;

@@ -31,6 +31,10 @@ const Container = styled.div`
   gap:20px;
   align-items:flex-start;
   padding:20px;
+  @media only screen and  (max-width:720px){
+    display:none;
+
+  }
   
 `;
 
@@ -53,7 +57,6 @@ const SignIn = styled.div`
   align-items:center;
   gap:10px;
   color:${({theme}) => theme.textSoft}
-
 `
 
 const SignInButton = styled.button`

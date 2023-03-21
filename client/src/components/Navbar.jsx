@@ -11,7 +11,7 @@ const Container = styled.nav`
   display:flex;
   align-items:center;
   justify-content:space-between;
-  positiion:sticky;
+  position:sticky;
   top:0;
 `
 
