@@ -2,12 +2,21 @@ import styled from "styled-components";
 import {Link} from "react-router-dom";
  
 const Container = styled.div`
-    width:${(props) => props.type === "small" ? "300px" : "360px"};
+    width:360px;
     margin-bottom:${(props) => props.type === "small" ? "10px" : "50px"};
     cursor:pointer;
     display:${(props) => props.type != "small" ? "column" : "flex"};
-    gap:1rem;
+    gap:0.5rem;
+    
     box-sizing:border-box;
+
+    @media only screen and (max-width:1400px){
+      display:block;
+      width:300px;
+      margin-bottom:50px;
+      cursor:pointer;
+    }
+
     @media only screen and (max-width:720px){
       display:block;
       width:300px;
@@ -17,16 +26,17 @@ const Container = styled.div`
     
 `
 const CardImage = styled.img`
-    width:${(props) => props.type === "small" ? "50%" : "100%"};
+    width:100%;
     height:${(props) => props.type === "small" ? "150px" : "250px"};
     background-color:#999;
     @media only screen and (max-width:720px){
       height:250px;
-      width:100%;
+      
     }
 `
 const VideoDetails = styled.div`
     display:flex;
+    width:100%;
     margin-top:${(props) => props.type === "small" ? "" : "1rem"};
     gap:1rem;
     color:${({theme}) => theme.text};

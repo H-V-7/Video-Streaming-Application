@@ -1,16 +1,18 @@
 import styled from "styled-components";
 import LoginIcon from '@mui/icons-material/Login';
 import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined';
+import { Link } from "react-router-dom";
 
+import MenuOpenTwoToneIcon from '@mui/icons-material/MenuOpenTwoTone';
 
 
 const Container = styled.nav`
   box-sizing:border-box;
   background-color:${({theme}) => theme.bg};
-  height:4rem;
+  height:5rem;
   display:flex;
   align-items:center;
-  justify-content:space-between;
+  justify-content:space-around;
   position:sticky;
   top:0;
 `
@@ -18,11 +20,13 @@ const Container = styled.nav`
 const Search = styled.div`
   display:flex;
   align-items:center;
-  justify-content:space-between;
+  
   width:50%;
   border:1px solid #ccc;
-  margin-left:100px;
-  
+
+  @media only screen and (max-width:720px){
+    height:50%;
+  }
 `
 const Input = styled.input`
   width:100%;
@@ -48,17 +52,30 @@ const SignInButton = styled.button`
   border-radius:3px;
 `;
 
+const MenuButton = styled.div`
+    cursor:pointer;
+    display:none;
+    @media screen only and (max-wdith:1400px){
+        display:visible;
+    }
+`;
+
 
 
 
 const Navbar = () => {
   return (
     <Container>
+      <MenuButton>
+        <MenuOpenTwoToneIcon />
+      </MenuButton>
      <Search>
       <Input placeholder="Search" />
       <SearchOutlinedIcon />
      </Search>
-     <SignInButton><LoginIcon /> Sign In</SignInButton>
+     <Link to="/signin" style={{textDecoration:"none", color:"inherit"}}>
+        <SignInButton><LoginIcon /> Sign In</SignInButton>
+      </Link>
     </Container>
   )
 }

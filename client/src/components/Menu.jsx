@@ -21,6 +21,7 @@ import { Link } from "react-router-dom";
 
 const Container = styled.div`
   box-sizing:border-box;
+  
   height:100vh;
   position:sticky;
   top:0;
@@ -28,10 +29,10 @@ const Container = styled.div`
   color: ${({theme}) => theme.text};
   display:flex;
   flex-direction:column;
-  gap:20px;
+  gap:1rem;
   align-items:flex-start;
   padding:20px;
-  @media only screen and  (max-width:720px){
+  @media only screen and  (max-width:1400px){
     display:none;
 
   }
@@ -46,9 +47,16 @@ const LogoContainer = styled.div`
 `
 const MenuItem = styled.div`
   display:flex;
+  overflow:hidden;
+  width:100%;
   align-items:center;
-  gap:10px;
+  gap:1rem;
+  padding:0.5rem;
   cursor:pointer;
+
+  &:hover{
+    background-color:${({theme}) => theme.bgLighter};
+  }
   
 `
 const SignIn = styled.div`
@@ -91,7 +99,7 @@ const Menu = ({darkMode,setDarkMode}) => {
           <h1 style={{fontSize:20, fontWeight:"bold"}}>Video Gram</h1>
       </LogoContainer>
       </Link>
-      <Link to="/" style={{textDecoration:"none", color:"inherit"}}>
+      <Link to="/" style={{textDecoration:"none", color:"inherit", width:"100%"}}>
       <MenuItem>
         <HomeIcon />
         Home
@@ -117,7 +125,9 @@ const Menu = ({darkMode,setDarkMode}) => {
       <Hr />
       <SignIn>
         Sign In to Like, Comment and Subscribe
-        <SignInButton><LoginIcon/> Sign In</SignInButton>
+        <Link to="/signin" style={{textDecoration:"none", color:"inherit",width:"70%"}}>
+          <SignInButton><LoginIcon/> Sign In</SignInButton>
+        </Link>
       </SignIn>
       <Hr />
       <Title>Categories</Title>

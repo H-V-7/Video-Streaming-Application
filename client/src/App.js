@@ -7,14 +7,14 @@ import { useState } from "react";
 import {BrowserRouter,Routes,Route} from "react-router-dom";
 import Home from "./Pages/Home";
 import Video from "./Pages/Video";
-
+import SignIn from "./Pages/SignIn";
 
 const Container = styled.div`
   display:grid;
   grid-template-columns: 20% 80%;
   grid-template-areas: menu main;
 
-  @media only screen and  (max-width:720px){
+  @media only screen and  (max-width:1400px){
     display:grid;
     grid-template-columns: 100%;
     grid-template-areas: main;
@@ -45,6 +45,7 @@ function App() {
               <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/video/:id" element={<Video />} />
+                <Route path="/signin" element={<SignIn />} />
               </Routes>
             </Wrapper>
           </Main>

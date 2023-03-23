@@ -13,9 +13,9 @@ const Container = styled.section`
     grid-template-columns:70% 30%;
     grid-template-areas: video sidebar;
     
-    padding:1rem;
     
-    @media only screen and (max-width:720px){
+    
+    @media only screen and (max-width:1400px){
         display:flex;
         flex-direction:column;
         padding:1rem;
@@ -38,6 +38,7 @@ const VideoTitle = styled.h1`
     font-size:20px;
 `
 const VideoDetails = styled.div`
+    
     display:flex;
     align-items:center;
     justify-content:space-between;
