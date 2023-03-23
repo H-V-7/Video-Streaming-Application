@@ -11,14 +11,13 @@ import Video from "./Pages/Video";
 
 const Container = styled.div`
   display:grid;
-  grid-template-columns: 10% 90%;
+  grid-template-columns: 20% 80%;
   grid-template-areas: menu main;
 
   @media only screen and  (max-width:720px){
     display:grid;
     grid-template-columns: 100%;
     grid-template-areas: main;
-
   }
 
 `

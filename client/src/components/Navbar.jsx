@@ -26,6 +26,7 @@ const Search = styled.div`
 `
 const Input = styled.input`
   width:100%;
+  outline:none;
   padding:10px;
   color: ${({theme}) => theme.text};
   background-color:transparent;

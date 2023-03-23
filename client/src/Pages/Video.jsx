@@ -4,20 +4,27 @@ import ThumbUpTwoToneIcon from '@mui/icons-material/ThumbUpTwoTone';
 import ThumbDownOffAltTwoToneIcon from '@mui/icons-material/ThumbDownOffAltTwoTone';
 import ShareTwoToneIcon from '@mui/icons-material/ShareTwoTone';
 import LibraryAddTwoToneIcon from '@mui/icons-material/LibraryAddTwoTone';
+import AddComment from "../components/AddComment";
+import Comment from "../components/Comment";
+import Card from "../components/Card";
 
 const Container = styled.section`
     display:grid;
-    grid-template-columns:80% 20%;
-    padding:2rem;
-    height:100vh;
+    grid-template-columns:70% 30%;
+    grid-template-areas: video sidebar;
+    
+    padding:1rem;
+    
     @media only screen and (max-width:720px){
         display:flex;
         flex-direction:column;
+        padding:1rem;
     }
 `
 
 const VideoWrapper = styled.div`
     display:flex;
+    padding:1rem;
     flex-direction:column;
     gap:1rem;
 `
@@ -65,7 +72,6 @@ const Channel = styled.div`
 `
 const ChannelDetails = styled.div`
     display:flex;
-    
     gap:1rem;
 `
 
@@ -78,17 +84,19 @@ const ChannelInfo = styled.div`
 
 const ChannelIcon = styled.img`
     border-radius:50%;
+    padding:0.5rem;
     width:50px;
     height:50px;
     background-color:#999;
 `
-const ChannelName = styled.div`
-
+const ChannelName = styled.span`
+    font-weight:bold;
+    font-size:18px;
 `
 const SubscriberCount = styled.div`
     color: ${({theme}) => theme.textSoft}
 `
-const VideoDescription = styled.div`
+const VideoDescription = styled.p`
     padding:1rem;
     background-color:${({theme}) => theme.bg}
 `
@@ -102,16 +110,30 @@ const SubscribeButton = styled.button`
     cursor:pointer;
 `
 
-const SideBar = styled.div``
+const SideBar = styled.div`
+    display:flex;
+    flex-direction:column;
+    
+    gap:1rem;
+    align-items:center;
+`
+const SidebarTitle = styled.h1`
+    font-size:20px;
+    margin-bottom:1rem;
+    @media only screen and (max-width:720px){
+        font-size:20px;
+    }
+`
 
-const Comments = styled.div``
+
+
 
 
 
 function Video(){
     return(
         <Container>
-            <VideoWrapper>
+            <VideoWrapper classNmae="video">
                 <Content>
                     <iframe width="200" height="200" src="https://www.youtube.com/embed/-nXj0p3kyzE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                 </Content>
@@ -138,12 +160,45 @@ function Video(){
                     <SubscribeButton>Subscribe</SubscribeButton>
                 
                 </Channel>
+            
                 <VideoDescription>
                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis eaque laborum esse consequatur, illum neque natus reiciendis cumque quae fugiat atque eius impedit alias vero culpa iusto tempora tempore incidunt?
-                               Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum tenetur non reiciendis vero facere delectus optio aspernatur accusamus harum fugit. Omnis nemo maxime magni fuga nesciunt at laudantium animi! Perferendis.                            </VideoDescription>
-                </VideoWrapper>
-            <SideBar>
-                Side Bar
+                               Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum tenetur non reiciendis vero facere delectus optio aspernatur accusamus harum fugit. Omnis nemo maxime magni fuga nesciunt at laudantium animi! Perferendis.                            
+                </VideoDescription>
+                <HR />
+                <AddComment />
+                <Comment />
+                <Comment />
+                <Comment />
+                <Comment />
+                <Comment />
+                <Comment />
+                <Comment />
+                <Comment />
+                <Comment />
+                <Comment />
+                <Comment />
+                <Comment />
+                <Comment />
+                <Comment />
+            </VideoWrapper>
+            <SideBar className="sidebar">
+                <SidebarTitle>Recommendations</SidebarTitle>
+                <Card type="small" />
+                <Card type="small" />
+                <Card type="small" />
+                <Card type="small" />
+                <Card type="small" />
+                <Card type="small" />
+                <Card type="small" />
+                <Card type="small" />
+                <Card type="small" />
+                <Card type="small" />
+                <Card type="small" />
+                <Card type="small" />
+                <Card type="small" />
+                <Card type="small" />
+                <Card type="small" />
             </SideBar>
         </Container>
     )
