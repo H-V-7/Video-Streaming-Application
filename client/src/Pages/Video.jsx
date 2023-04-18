@@ -10,7 +10,7 @@ import Card from "../components/Card";
 
 const Container = styled.section`
     display:grid;
-    grid-template-columns:70% 30%;
+    grid-template-columns:60% 40%;
     grid-template-areas: video sidebar;
     
     
