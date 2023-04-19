@@ -1,18 +1,17 @@
-import {Schema,model} from "mongoose";
+import mongoose from "mongoose";
 
 //User schema to save user details.
 
-const UserSchema = new Schema({
+const UserSchema = new mongoose.Schema({
     name:{
         type:String,
         required:true,
-        unique:true,
+        unique:true
     },
     email:{
         type:String,
         required:true,
         unique:true,
-        lowercase:true
     },
     password:{
         type:String,
@@ -32,4 +31,10 @@ const UserSchema = new Schema({
 
 },{timestamps:true});
 
-export default model("User", UserSchema);
+export default mongoose.model("User", UserSchema);
+
+
+
+
+
+
