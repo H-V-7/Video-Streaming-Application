@@ -10,6 +10,8 @@ import videoRoute from "./routes/VideoRoute.js";
 import commentRoute from "./routes/CommentRoute.js";
 import authRoute from "./routes/authRoute.js";
 
+
+
 const app = express(); //initializing express application.
 config(); //config will provide us the  variable which are specified in the .env file.
 
